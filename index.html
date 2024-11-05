@@ -4,127 +4,257 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amrutlal Kavaiya - Chatbot Developer & AI Specialist</title>
+    <!-- Include Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Include Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .navbar {
+            background-color: #0078d4; /* Microsoft Blue */
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+        .navbar-nav .nav-link {
+            color: #fff;
+            margin-right: 1rem;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffb900; /* Microsoft Yellow */
+        }
+        .jumbotron {
+            background: url('https://source.unsplash.com/1600x900/?technology') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 8rem 1rem;
+            position: relative;
+        }
+        .jumbotron::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 120, 212, 0.7); /* Microsoft Blue */
+        }
+        .jumbotron .container {
+            position: relative;
+            z-index: 1;
+        }
+        h1, h2 {
+            font-weight: 700;
+        }
+        .section-title {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background-color: #0078d4; /* Microsoft Blue */
+            display: block;
+            margin: 1rem auto 0;
+        }
+        .card {
+            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        .btn-primary {
+            background-color: #0078d4; /* Microsoft Blue */
+            border-color: #0078d4;
+        }
+        footer {
+            background-color: #0078d4; /* Microsoft Blue */
+            color: #fff;
+            padding: 1.5rem 0;
+        }
+        footer a {
+            color: #ffb900; /* Microsoft Yellow */
+        }
+        footer a:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+        .social-icons a {
+            margin: 0 0.5rem;
+            color: #ffb900; /* Microsoft Yellow */
+            font-size: 1.2rem;
+        }
+        .social-icons a:hover {
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Amrutlal Kavaiya</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="bg-primary text-white text-center py-5">
+    <!-- Jumbotron Header -->
+    <header class="jumbotron text-center">
         <div class="container">
-            <h1>Amrutlal Kavaiya</h1>
-            <p class="lead">Chatbot Developer & AI Specialist</p>
+            <h1 class="display-4">Chatbot Developer & AI Specialist</h1>
+            <p class="lead">Delivering intelligent, innovative solutions to enhance customer experiences with AI-powered chatbots and virtual assistants.</p>
+            <a href="#contact" class="btn btn-primary btn-lg mt-4">Get In Touch</a>
         </div>
     </header>
 
-    <section id="about" class="py-5">
+    <!-- About Section -->
+    <section id="about" class="container my-5">
+        <h2 class="text-center section-title">About Me</h2>
+        <p class="text-center">I am Amrutlal Kavaiya, an AI and Machine Learning Specialist with extensive experience in developing intelligent chatbot solutions for various industries, including healthcare, finance, and IT support. My passion lies in leveraging artificial intelligence to solve real-world problems and improve user experiences through advanced conversational interfaces.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>About Me</h2>
-                    <p>I specialize in developing AI-based and Retrieval-Augmented Generation (RAG) based chatbots using various frameworks and platforms like Google Dialogflow CX, Microsoft Bot Framework, Telegram, and Discord. My experience ranges from healthcare to banking, ensuring personalized and efficient solutions.</p>
+            <h2 class="text-center section-title">Skills</h2>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <i class="fas fa-comments fa-3x mb-3 text-primary"></i>
+                    <h5 class="mb-3">Conversational AI</h5>
+                    <p>Expertise in building chatbot solutions using Dialogflow, Rasa, and Microsoft Bot Framework. Proficient in integrating chatbots with multiple platforms to provide seamless user experiences.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <i class="fas fa-brain fa-3x mb-3 text-primary"></i>
+                    <h5 class="mb-3">Machine Learning & NLP</h5>
+                    <p>Skilled in developing machine learning models for natural language processing, including intent classification, entity recognition, and sentiment analysis using TensorFlow, scikit-learn, and PyTorch.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <i class="fas fa-cloud fa-3x mb-3 text-primary"></i>
+                    <h5 class="mb-3">Cloud Technologies</h5>
+                    <p>Experience with deploying AI solutions on cloud platforms such as Google Cloud, AWS, and Azure. Proficient in using services like Cloud Functions, Cloud Run, and BigQuery for scalable deployments.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="bg-light py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>Skills</h2>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Google Dialogflow CX</li>
-                        <li class="list-group-item">Microsoft Bot Framework</li>
-                        <li class="list-group-item">Telegram Bot Development</li>
-                        <li class="list-group-item">Discord Bot Development</li>
-                        <li class="list-group-item">AI and RAG-based Agents</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-5">
-        <div class="container">
-            <h2 class="text-center">Projects</h2>
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">MediRAG - Intelligent Healthcare Solutions</h5>
-                            <p class="card-text">MediRAG is an intelligent healthcare chatbot utilizing Retrieval-Augmented Generation (RAG) to provide accurate and contextually relevant answers to medical queries. The solution is designed to enhance accessibility to healthcare information, providing quick responses to patient questions about medical conditions, treatment options, and healthcare services.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Legal Assist Chatbot</h5>
-                            <p class="card-text">The Legal Assist Chatbot is a multilingual conversational AI tool designed to provide legal information and summarize court documents in English and various scheduled Indian languages. It leverages a multi-stage Retrieval-Augmented Generation (RAG) architecture to deliver precise legal information, using semantic search, vector databases, and large language models (LLMs) for accurate and context-aware responses. <a href="#">Live Demo</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Medical Office Receptionist Chatbot</h5>
-                            <p class="card-text">This chatbot serves as a receptionist-like virtual assistant for medical offices. It schedules, modifies, and cancels appointments, sends SMS notifications, and integrates with Google Calendar to ensure real-time availability. Built on Google Cloud architecture, it leverages Dialogflow CX, Cloud Functions, and Twilio for SMS integration. <a href="#">Live POC</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">BankBuddy - Your AI-Powered Banking Assistant</h5>
-                            <p class="card-text">BankBuddy is an AI-powered chatbot ecosystem for banking, providing comprehensive services such as fraud detection, personalized financial advice, and handling customer queries. The solution integrates Google Cloud technologies, including Dialogflow CX, Vertex AI, and BigQuery, to deliver personalized banking experiences. It offers features such as account management, loan eligibility assessment, and personalized financial planning. The system is built to provide financial inclusion and enhanced customer experience.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">IT Support Contact Center Solution</h5>
-                            <p class="card-text">The IT Support Contact Center Solution utilizes Google Cloud technologies to create a scalable and efficient IT support chatbot. It integrates Dialogflow CX for user inquiries, Vertex AI for intent classification, and Cloud Run for backend logic. This solution provides 24/7 support, automates routine IT tasks, and routes complex inquiries to the appropriate human agents, enhancing both customer and agent experiences. <a href="#">Live Demo</a></p>
-                        </div>
+    <!-- Projects Section -->
+    <section id="projects" class="container my-5">
+        <h2 class="text-center section-title">Freelancer Projects</h2>
+        <div class="row">
+            <!-- Project 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">MediRAG - Intelligent Healthcare Solutions</h5>
+                        <p class="card-text">MediRAG is a healthcare chatbot leveraging RAG architecture to provide contextually accurate healthcare responses. Implemented using Google Cloud technologies and designed to enhance patient care.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="contact" class="bg-light py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2>Contact</h2>
-                    <p>Feel free to reach out to me via email.</p>
-                    <p><strong>Email:</strong> <a href="mailto:arkavaiya@gmail.com">arkavaiya@gmail.com</a></p>
+            <!-- Project 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Legal Assist Chatbot</h5>
+                        <p class="card-text">A multilingual AI chatbot designed to provide legal information and summarize court documents in multiple Indian languages. Utilized RAG architecture, Dialogflow, and Google Cloud to create an accessible legal resource.</p>
+                    </div>
                 </div>
             </div>
+            <!-- Project 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Medical Office Receptionist Chatbot</h5>
+                        <p class="card-text">Developed a digital receptionist for a primary care office using Dialogflow CX. The chatbot manages appointment scheduling, Google Calendar integration, and SMS reminders, ensuring seamless patient interactions.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">BankBuddy - AI-Powered Banking Assistant</h5>
+                        <p class="card-text">Created an AI ecosystem for banking services, offering personalized financial advice, fraud detection, and automation of basic transactions. Integrated Google Cloud, Dialogflow CX, and Vertex AI for a secure, user-friendly experience.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">IT Support Contact Center Solution</h5>
+                        <p class="card-text">Developed an IT support chatbot leveraging Google Cloud services like Dialogflow CX, Vertex AI, Cloud Functions, and Cloud Run. Designed to provide efficient 24/7 support, automating basic tasks, and routing complex issues to human agents.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 6 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Investment Planner Web Application</h5>
+                        <p class="card-text">Created a Streamlit web application to assist users in generating personalized investment plans based on financial goals, risk tolerance, and current financial situations. The application integrates advanced financial algorithms to provide accurate suggestions.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more projects as needed -->
         </div>
     </section>
 
-    <footer class="bg-dark text-white text-center py-3">
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="section-title">Contact Me</h2>
+            <p class="mb-4">If you have any questions or would like to discuss a project, feel free to get in touch!</p>
+            <a href="mailto:arkavaiya@gmail.com" class="btn btn-outline-light btn-lg">Contact Me</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
         <div class="container">
-            <p>&copy; 2024 Amrutlal Kavaiya. All rights reserved.</p>
+            <div class="social-icons my-3">
+                <a href="https://www.linkedin.com/in/amrutlal-kavaiya"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/amrutlal-kavaiya"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/amrutlal_kavaiya"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.fiverr.com/myephysics?public_mode=true"><i class="fab fa-fiverr"></i></a>
+                <a href="https://www.upwork.com/freelancers/~01e9fb34aeaa577a3e"><i class="fab fa-upwork"></i></a>
+            </div>
+            <p>&copy; 2024 Amrutlal Kavaiya. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Include Bootstrap JS and Font Awesome -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Include Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 </body>
 </html>
