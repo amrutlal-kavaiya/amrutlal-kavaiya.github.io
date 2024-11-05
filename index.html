@@ -3,44 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amrutlal Kavaiya - Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Amrutlal Kavaiya - Chatbot Developer & AI Specialist</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-gray-800">
-    <header class="bg-blue-600 text-white p-4">
-        <div class="container mx-auto">
-            <h1 class="text-3xl">Amrutlal Kavaiya</h1>
-            <p class="text-lg">Chatbot Developer & AI Specialist</p>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Amrutlal Kavaiya</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1>Amrutlal Kavaiya</h1>
+            <p class="lead">Chatbot Developer & AI Specialist</p>
         </div>
     </header>
-    <main class="container mx-auto p-4">
-        <section id="about" class="my-8">
-            <h2 class="text-2xl font-bold">About Me</h2>
-            <p class="mt-4">I specialize in developing AI-based and RAG-based chatbots using various frameworks and platforms like Google Dialogflow CX, Microsoft Bot Framework, Telegram, and Discord.</p>
-        </section>
-        <section id="skills" class="my-8">
-            <h2 class="text-2xl font-bold">Skills</h2>
-            <ul class="mt-4 list-disc list-inside">
-                <li>Google Dialogflow CX</li>
-                <li>Microsoft Bot Framework</li>
-                <li>Telegram Bot Development</li>
-                <li>Discord Bot Development</li>
-                <li>AI and RAG-based Agents</li>
-            </ul>
-        </section>
-        <section id="projects" class="my-8">
-            <h2 class="text-2xl font-bold">Projects</h2>
-            <p class="mt-4">Here you can showcase your projects with descriptions and links to the repositories or live demos.</p>
-        </section>
-        <section id="contact" class="my-8">
-            <h2 class="text-2xl font-bold">Contact</h2>
-            <p class="mt-4">Feel free to reach out to me via <a href="mailto:your-email@example.com" class="text-blue-600">email</a>.</p>
-        </section>
-    </main>
-    <footer class="bg-gray-800 text-white p-4">
-        <div class="container mx-auto text-center">
+
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>About Me</h2>
+                    <p>I specialize in developing AI-based and Retrieval-Augmented Generation (RAG) based chatbots using various frameworks and platforms like Google Dialogflow CX, Microsoft Bot Framework, Telegram, and Discord. My experience ranges from healthcare to banking, ensuring personalized and efficient solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Skills</h2>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Google Dialogflow CX</li>
+                        <li class="list-group-item">Microsoft Bot Framework</li>
+                        <li class="list-group-item">Telegram Bot Development</li>
+                        <li class="list-group-item">Discord Bot Development</li>
+                        <li class="list-group-item">AI and RAG-based Agents</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Projects</h2>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">MediRAG - Intelligent Healthcare Solutions</h5>
+                            <p class="card-text">A chatbot utilizing Retrieval-Augmented Generation for intelligent healthcare solutions, aimed at providing accurate and contextually relevant answers to medical queries.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Legal Assist Chatbot</h5>
+                            <p class="card-text">A multilingual AI chatbot providing legal information and summarizing court documents in English and various Indian languages using RAG-based architecture. <a href="#">Live Demo</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Medical Office Receptionist Chatbot</h5>
+                            <p class="card-text">A receptionist-like virtual assistant for medical offices, capable of scheduling appointments, sending reminders, and syncing with Google Calendar for real-time availability. <a href="#">Live POC</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">BankBuddy - Your AI-Powered Banking Assistant</h5>
+                            <p class="card-text">A comprehensive chatbot for banking, providing fraud detection, personalized financial advice, and core banking services. Integrated with Google Cloud, Dialogflow CX, and Vertex AI for seamless customer experience.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">IT Support Contact Center Solution</h5>
+                            <p class="card-text">An IT support solution using Dialogflow CX, Vertex AI, and serverless Google Cloud technologies to provide 24/7 assistance and automate IT support tasks. <a href="#">Live Demo</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2>Contact</h2>
+                    <p>Feel free to reach out to me via email.</p>
+                    <p><strong>Email:</strong> <a href="mailto:arkavaiya@gmail.com">arkavaiya@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
             <p>&copy; 2024 Amrutlal Kavaiya. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
