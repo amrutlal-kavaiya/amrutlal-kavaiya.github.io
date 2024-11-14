@@ -12,13 +12,19 @@
             font-family: 'Nunito', sans-serif;
             background-color: #f4f4f9;
             color: #333;
+            padding-top: 76px;
         }
         .navbar {
             background-color: #0078d4;
+            padding: 1rem;
+        }
+        .navbar-toggler {
+            border-color: rgba(255,255,255,0.5);
+            margin-right: 0.5rem;
         }
         .navbar-brand {
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: #fff;
         }
         .navbar-nav .nav-link {
@@ -124,6 +130,28 @@
         }
         .social-icons a:hover {
             color: #fff;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.5rem;
+            }
+            
+            .jumbotron {
+                padding-top: 6rem !important;
+                padding-bottom: 3rem !important;
+            }
+            
+            .display-4 {
+                font-size: 2rem;
+            }
+            
+            .lead {
+                font-size: 1rem;
+            }
+            
+            .card {
+                margin-bottom: 1rem;
+            }
         }
     </style>
    <script type="text/javascript">
