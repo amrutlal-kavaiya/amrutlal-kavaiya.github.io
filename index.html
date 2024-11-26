@@ -119,6 +119,13 @@
         .social-icons a:hover {
             color: #fff;
         }
+           .skill-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
     </style>
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -128,158 +135,104 @@
         })(window, document, "clarity", "script", "ovduypetym");
     </script>
 </head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Conversation AI Specialist</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">About Me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="#" class="flex items-center py-4 px-2">
+                            <span class="font-semibold text-gray-500 text-lg">Conversation AI Specialist</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="/" class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold">About Me</a>
+                    <a href="#skills" class="py-4 px-2 text-gray-500 hover:text-green-500 transition duration-300">Skills</a>
+                    <a href="projects.html" class="py-4 px-2 text-gray-500 hover:text-green-500 transition duration-300">Projects</a>
+                    <a href="contact.html" class="py-4 px-2 text-gray-500 hover:text-green-500 transition duration-300">Contact</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Jumbotron Header -->
-    <header class="jumbotron text-center">
-        <div class="container">
-            <h1 class="display-4">Chatbot Developer & AI Specialist</h1>
-            <p class="lead">Delivering intelligent, innovative solutions to enhance customer experiences with AI-powered chatbots and virtual assistants.</p>
-            <a href="#contact" class="btn btn-primary btn-lg mt-4">Get In Touch</a>
+    <header class="bg-gradient-to-r from-green-400 to-blue-500 text-white">
+        <div class="container mx-auto px-4 py-16 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Chatbot Developer & AI Specialist</h1>
+            <p class="text-xl md:text-2xl mb-8">Delivering intelligent, innovative solutions to enhance customer experiences with AI-powered chatbots and virtual assistants.</p>
+            <a href="#contact" class="bg-white text-green-500 font-bold py-3 px-6 rounded-full hover:bg-green-100 transition duration-300">Get In Touch</a>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="container my-5">
-        <h2 class="text-center section-title">About Me</h2>
-        <p class="text-center">I am Amrutlal Kavaiya, an AI and Machine Learning Specialist with extensive experience in developing intelligent chatbot solutions for various industries, including healthcare, finance, and IT support. My passion lies in leveraging artificial intelligence to solve real-world problems and improve user experiences through advanced conversational interfaces.</p>
-    </section>
+    <main>
+        <section id="about" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center">
+                    I am Amrutlal Kavaiya, an AI and Machine Learning Specialist with extensive experience in developing intelligent chatbot solutions for various industries, including healthcare, finance, and IT support. My passion lies in leveraging artificial intelligence to solve real-world problems and improve user experiences through advanced conversational interfaces.
+                </p>
+            </div>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center section-title">Skills</h2>
-            <div class="row text-center">
-                <div class="col-md-4 mb-4">
-                    <i class="fas fa-comments fa-3x mb-3 text-primary"></i>
-                    <h5 class="mb-3">Conversational AI</h5>
-                    <p>Expertise in building chatbot solutions using Dialogflow, Rasa, and Microsoft Bot Framework. Proficient in integrating chatbots with multiple platforms to provide seamless user experiences.</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <i class="fas fa-brain fa-3x mb-3 text-primary"></i>
-                    <h5 class="mb-3">Machine Learning & NLP</h5>
-                    <p>Skilled in developing machine learning models for natural language processing, including intent classification, entity recognition, and sentiment analysis using TensorFlow, scikit-learn, and PyTorch.</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <i class="fas fa-cloud fa-3x mb-3 text-primary"></i>
-                    <h5 class="mb-3">Cloud Technologies</h5>
-                    <p>Experience with deploying AI solutions on cloud platforms such as Google Cloud, AWS, and Azure. Proficient in using services like Cloud Functions, Cloud Run, and BigQuery for scalable deployments.</p>
+        <section id="skills" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="skill-card bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold mb-4">Conversational AI</h3>
+                        <p class="text-gray-700">Expertise in building chatbot solutions using Dialogflow, Rasa, and Microsoft Bot Framework. Proficient in integrating chatbots with multiple platforms to provide seamless user experiences.</p>
+                    </div>
+                    <div class="skill-card bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold mb-4">Machine Learning & NLP</h3>
+                        <p class="text-gray-700">Skilled in developing machine learning models for natural language processing, including intent classification, entity recognition, and sentiment analysis using TensorFlow, scikit-learn, and PyTorch.</p>
+                    </div>
+                    <div class="skill-card bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold mb-4">Cloud Technologies</h3>
+                        <p class="text-gray-700">Experience with deploying AI solutions on cloud platforms such as Google Cloud, AWS, and Azure. Proficient in using services like Cloud Functions, Cloud Run, and BigQuery for scalable deployments.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="container my-5">
-        <h2 class="text-center section-title">Freelancer Projects</h2>
-        <div class="row">
-            <!-- Project 1 -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">MediRAG - Intelligent Healthcare Solutions</h5>
-                        <p class="card-text">MediRAG is a healthcare chatbot leveraging RAG architecture to provide contextually accurate healthcare responses. Implemented using Google Cloud technologies and designed to enhance patient care.</p>
-                    </div>
-                </div>
+        <section id="contact" class="py-16 bg-green-500 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-8">Contact Me</h2>
+                <p class="text-xl mb-8">If you have any questions or would like to discuss a project, feel free to get in touch!</p>
+                <a href="contact.html" class="bg-white text-green-500 font-bold py-3 px-6 rounded-full hover:bg-green-100 transition duration-300">Contact Me</a>
             </div>
-            <!-- Project 2 -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Legal Assist Chatbot</h5>
-                        <p class="card-text">A multilingual AI chatbot designed to provide legal information and summarize court documents in multiple Indian languages. Utilized RAG architecture, Dialogflow, and Google Cloud to create an accessible legal resource.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Project 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Medical Office Receptionist Chatbot</h5>
-                        <p class="card-text">Developed a digital receptionist for a primary care office using Dialogflow CX. The chatbot manages appointment scheduling, Google Calendar integration, and SMS reminders, ensuring seamless patient interactions.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Project 4 -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">BankBuddy - AI-Powered Banking Assistant</h5>
-                        <p class="card-text">Created an AI ecosystem for banking services, offering personalized financial advice, fraud detection, and automation of basic transactions. Integrated Google Cloud, Dialogflow CX, and Vertex AI for a secure, user-friendly experience.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Project 5 -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">IT Support Contact Center Solution</h5>
-                        <p class="card-text">Developed an IT support chatbot leveraging Google Cloud services like Dialogflow CX, Vertex AI, Cloud Functions, and Cloud Run. Designed to provide efficient 24/7 support, automating basic tasks, and routing complex issues to human agents.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Project 6 -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Investment Planner Web Application</h5>
-                        <p class="card-text">Created a Streamlit web application to assist users in generating personalized investment plans based on financial goals, risk tolerance, and current financial situations. The application integrates advanced financial algorithms to provide accurate suggestions.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more projects as needed -->
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-primary text-white">
-        <div class="container text-center">
-            <h2 class="section-title">Contact Me</h2>
-            <p class="mb-4">If you have any questions or would like to discuss a project, feel free to get in touch!</p>
-            <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Me</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="text-center">
-        <div class="container">
-            <div class="social-icons my-3">
-                <a href="https://www.linkedin.com/in/amrutlal-kavaiya"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/amrutlal-kavaiya"><i class="fab fa-github"></i></a>
-                <a href="https://twitter.com/amrutlal_kavaiya"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.fiverr.com/myephysics?public_mode=true"><i class="fab fa-fiverr"></i></a>
-                <a href="https://www.upwork.com/freelancers/~01e9fb34aeaa577a3e"><i class="fab fa-upwork"></i></a>
+    <footer class="bg-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
+            <div class="flex justify-center space-x-6 md:order-2">
+                <a href="https://www.linkedin.com/in/amrutlal-kavaiya" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">LinkedIn</span>
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com/amrutlal-kavaiya" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">GitHub</span>
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="https://twitter.com/amrutlal_kavaiya" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Twitter</span>
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+                <a href="https://www.fiverr.com/myephysics?public_mode=true" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Fiverr</span>
+                    <i class="fas fa-globe fa-2x"></i>
+                </a>
+                <a href="https://www.upwork.com/freelancers/~01e9fb34aeaa577a3e" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Upwork</span>
+                    <i class="fas fa-briefcase fa-2x"></i>
+                </a>
             </div>
-            <p>&copy; 2024 Conversation AI Specialist. All Rights Reserved.</p>
+            <div class="mt-8 md:mt-0 md:order-1">
+                <p class="text-center text-base text-gray-400">
+                    &copy; 2024 Conversation AI Specialist. All Rights Reserved.
+                </p>
+            </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 </body>
 </html>
