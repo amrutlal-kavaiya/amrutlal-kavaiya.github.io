@@ -3,172 +3,515 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freelance Projects Showcase</title>
+    <title>Conversation AI Specialist | Project Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #5652FF 0%, #3C8BFF 100%);
+            --secondary-gradient: linear-gradient(135deg, #FF6B6B 0%, #FF9E7A 100%);
+            --accent-gradient: linear-gradient(135deg, #6EDCEF 0%, #42A1C1 100%);
+            --neutral-gradient: linear-gradient(135deg, #1A1A2E 0%, #30334E 100%);
+            --text-primary: #1A1A2E;
+            --text-secondary: #474866;
+            --text-tertiary: #6B6F91;
+            --background-light: #F8F9FE;
+            --card-background: #FFFFFF;
+            --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* Global Styles */
         body {
-            font-family: 'Nunito', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            padding-top: 76px;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-secondary);
+            padding-top: 0;
+            overflow-x: hidden;
         }
-        .navbar {
-            background-color: #0078d4;
-            padding: 1rem;
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            color: var(--text-primary);
         }
-        .navbar-toggler {
-            border-color: rgba(255,255,255,0.5);
-            margin-right: 0.5rem;
-        }
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: #fff;
-        }
-        .navbar-nav .nav-link {
-            color: #fff;
-            margin-right: 1rem;
-        }
-        .navbar-nav .nav-link:hover {
-            color: #ffb900;
-        }
-        .jumbotron {
-            background: url('https://source.unsplash.com/1600x900/?technology') no-repeat center center;
-            background-size: cover;
-            color: white;
-            padding: 8rem 1rem;
-            position: relative;
-            margin-bottom: 2rem;
-        }
-        .jumbotron::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 120, 212, 0.7);
-        }
-        .jumbotron .container {
-            position: relative;
-            z-index: 1;
-        }
+
         .section-title {
             margin-bottom: 3rem;
             position: relative;
+            font-size: 2.2rem;
+            font-weight: 700;
         }
+
         .section-title::after {
             content: '';
-            width: 50px;
+            width: 60px;
             height: 4px;
-            background-color: #0078d4;
+            background: var(--primary-gradient);
             display: block;
+            margin: 1rem 0 0;
+            border-radius: 2px;
+        }
+
+        .text-center .section-title::after {
             margin: 1rem auto 0;
         }
+
+        /* Navbar Styling */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition-smooth);
+        }
+
+        .navbar.scrolled {
+            padding: 0.7rem 2rem;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            font-family: 'Space Grotesk', sans-serif;
+            position: relative;
+        }
+
+        .navbar-brand::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background: var(--primary-gradient);
+            border-radius: 2px;
+            transition: var(--transition-smooth);
+        }
+
+        .navbar-brand:hover::after {
+            width: 100%;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin: 0 1rem;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: var(--primary-gradient);
+            border-radius: 2px;
+            transition: var(--transition-smooth);
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        .navbar-nav .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 6rem 0;
+            background-color: var(--background-light);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 70%;
+            height: 100%;
+            background: var(--primary-gradient);
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+            opacity: 0.04;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content .highlight {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-content .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: var(--accent-gradient);
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            color: var(--text-tertiary);
+        }
+
+        /* Project Cards */
+        .project-grid {
+            margin-bottom: 6rem;
+        }
+
         .card {
             border: none;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            margin-bottom: 2rem;
+            border-radius: 16px;
+            background-color: var(--card-background);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            transition: var(--transition-smooth);
+            overflow: hidden;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
         }
+
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
         }
+
+        .card:hover .card-img-overlay {
+            opacity: 1;
+        }
+
         .video-container {
             position: relative;
+            overflow: hidden;
+            border-radius: 16px 16px 0 0;
             padding-bottom: 56.25%;
             height: 0;
-            overflow: hidden;
-            border-radius: 12px 12px 0 0;
         }
+
         .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-        }
-        .card-title {
-            color: #0078d4;
-            font-weight: 700;
-        }
-        .card-text {
-            color: #6c757d;
-        }
-        .btn-download, .btn-contact {
-            width: 48%;
             border: none;
-            padding: 0.5rem;
-            transition: all 0.3s ease;
         }
-        .btn-download {
-            background-color: #0078d4;
-            color: #fff;
+
+        .card-body {
+            padding: 2rem;
+            flex-grow: 1;
         }
-        .btn-contact {
-            background-color: #28a745;
-            color: #fff;
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
         }
-        .btn-download:hover, .btn-contact:hover {
-            opacity: 0.9;
-            color: #fff;
+
+        .card-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+            transition: var(--transition-smooth);
         }
+
+        .card:hover .card-title::after {
+            width: 100%;
+        }
+
+        .card-text {
+            color: var(--text-tertiary);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .functionality-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .functionality-list {
+            padding-left: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .functionality-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            color: var(--text-tertiary);
+        }
+
+        .functionality-list li::before {
+            content: '';
+            position: absolute;
+            left: -1.2rem;
+            top: 0.5rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-gradient);
+        }
+
+        .card-footer {
+            background-color: transparent;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 1.5rem 2rem;
+        }
+
+        .btn {
+            border-radius: 50px;
+            padding: 0.6rem 1.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary-gradient);
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-primary:hover::before {
+            opacity: 1;
+        }
+
+        .btn-secondary {
+            background: var(--accent-gradient);
+            color: white;
+        }
+
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-gradient);
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-secondary:hover::before {
+            opacity: 1;
+        }
+
+        /* Footer */
         footer {
-            background-color: #0078d4;
-            color: #fff;
-            padding: 1.5rem 0;
-            margin-top: 3rem;
+            background: var(--neutral-gradient);
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+            overflow: hidden;
         }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: var(--background-light);
+            clip-path: ellipse(50% 50% at 50% 50%);
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-heading {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .social-icons {
+            margin: 2rem 0;
+        }
+
         .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
             margin: 0 0.5rem;
-            color: #ffb900;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            transition: var(--transition-smooth);
         }
+
         .social-icons a:hover {
-            color: #fff;
+            background: white;
+            color: var(--text-primary);
+            transform: translateY(-5px);
         }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 2rem;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero::before {
+                width: 100%;
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+        }
+
         @media (max-width: 768px) {
             .navbar {
-                padding: 0.5rem;
+                padding: 0.8rem 1rem;
             }
             
-            .jumbotron {
-                padding-top: 6rem !important;
-                padding-bottom: 3rem !important;
+            .hero {
+                padding: 5rem 0 3rem;
+                min-height: auto;
             }
             
-            .display-4 {
-                font-size: 2rem;
+            .hero-content h1 {
+                font-size: 2.2rem;
             }
             
-            .lead {
+            .hero-content p {
                 font-size: 1rem;
             }
             
-            .card {
-                margin-bottom: 1rem;
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .card-body {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content .highlight::after {
+                height: 6px;
+            }
+            
+            .social-icons a {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+                margin: 0 0.3rem;
             }
         }
     </style>
-   <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "ovduypetym");
-</script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "ovduypetym");
+    </script>
 </head>
 <body>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Conversation AI Specialist</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -190,298 +533,327 @@
         </div>
     </nav>
 
-    <!-- Add Jumbotron -->
-    <header class="jumbotron text-center">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <h1 class="display-4">My Project Portfolio</h1>
-            <p class="lead">Explore my collection of AI-powered solutions and innovative applications</p>
-        </div>
-    </header>
-
-<div class="container">
-    <h2 class="text-center section-title">Featured Projects</h2>
-    <div class="row">
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="video-container">
-                    <!-- <iframe src="https://www.youtube.com/embed/w6Lz4DGa_6k" allowfullscreen></iframe> -->
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Dialogflow Buddy</h5>
-                    <p class="card-text">Dialogflow Development
-                        Made Simple
-                        Simplify your Dialogflow development process with our suite of powerful tools and features. Whether you're generating intents, creating routes, or analyzing performance, we've got you covered.
-                    </p>
-                    <!-- <p><strong>Functionality</strong></p>
-                    <ul>
-                        <li>Multilingual support (165 + languages)</li>
-                        <li>Empathetic conversation handling</li>
-                        <li>Personalized greetings</li>
-                        <li>Mood tracking</li>
-                        <li>Secure and confidential data environment</li>
-                        <li>Addressing stress, anxiety, and emotional well-being</li>
-                    </ul> -->
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <a href="https://dialogflow-buddy-tool.vercel.app/" class="btn btn-download">More Details</a>
-                    <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-contact">Contact Us</a>
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center hero-content fade-in">
+                    <h1>Crafting <span class="highlight">Intelligent</span> Conversations</h1>
+                    <p>Explore my portfolio of AI-powered solutions that transform how businesses interact with their customers through natural, engaging conversation interfaces.</p>
                 </div>
             </div>
         </div>
+    </section>
 
-
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/w6Lz4DGa_6k" allowfullscreen></iframe>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Mental Health multilingual Chatbot</h5>
-                    <p class="card-text">Develop a Mental Health Chatbot designed to provide empathetic support in multiple languages, including Hindi and English, for users seeking mental health assistance. Leveraging advanced NLP, the chatbot will handle conversations with cultural sensitivity, addressing topics like stress, anxiety, and emotional well-being. Key features include personalized greetings, mood tracking, and a secure, confidential data environment, offering users a safe and accessible space to discuss mental health concerns in their preferred language.</p>
-                    <p><strong>Functionality</strong></p>
-                    <ul>
-                        <li>Multilingual support (165 + languages)</li>
-                        <li>Empathetic conversation handling</li>
-                        <li>Personalized greetings</li>
-                        <li>Mood tracking</li>
-                        <li>Secure and confidential data environment</li>
-                        <li>Addressing stress, anxiety, and emotional well-being</li>
-                    </ul>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <a href="https://www.fiverr.com/users/myephysics/portfolio/NjcyZGY5NTk2MWQ0NWUwMDAxNzcxY2Ux" class="btn btn-download">More Details</a>
-                    <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-contact">Contact Us</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/h7yNJclt3SU" allowfullscreen></iframe>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">HealthCare AI-Powered Solutions</h5>
-                    <p class="card-text">Develop a Mental Health Chatbot designed to provide empathetic support in multiple languages, including Hindi and English, for users seeking mental health assistance. Leveraging advanced NLP, the chatbot will handle conversations with cultural sensitivity, addressing topics like stress, anxiety, and emotional well-being. Key features include personalized greetings, mood tracking, and a secure, confidential data environment, offering users a safe and accessible space to discuss mental health concerns in their preferred language.</p>
-                    <p><strong>Functionality</strong></p>
-                    <ul>
-                        <li>AI-powered symptom analysis</li>
-                        <li>Medical image processing</li>
-                        <li>Electronic Health Records (EHR) integration</li>
-                        <li>Personalized treatment recommendations</li>
-                        <li>Remote patient monitoring</li>
-                        <li>Healthcare analytics and insights</li>
-                    </ul>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <a href="https://www.upwork.com/freelancers/~01986c2d270906c913?p=1837923385473990656" class="btn btn-download">More Details</a>
-                    <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-contact">Contact Us</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/nXhfo_op2iU" allowfullscreen></iframe>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Kuber Bank Virtual Assistant - Full Live Demo</h5>
-                    <p class="card-text">Kuber Bank Conversation AI is a sophisticated virtual banking assistant powered by advanced AI technologies. It provides seamless, secure, and intelligent banking services through natural language processing and machine learning capabilities. The system offers real-time assistance for various banking operations while maintaining the highest standards of security and user experience.</p>
-                    <p><strong>Key Features</strong></p>
-                    <ul>
-                        <li>Account Information: Real-time balance checks, transaction history, and account status updates</li>
-                        <li>Loan Services: Comprehensive loan information, eligibility checks, and application tracking</li>
-                        <li>Location Services: Smart branch and ATM locator with real-time availability</li>
-                        <li>Transaction Processing: Secure fund transfers, bill payments, and financial operations</li>
-                        <li>24/7 Support: Automated customer service with intelligent human escalation</li>
-                        <li>Multi-language Support: Banking assistance in 165+ languages</li>
-                    </ul>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <a href="https://www.fiverr.com/users/myephysics/portfolio/NjcyZGY5NTk2MWQ0NWUwMDAxNzcxY2Ux" class="btn btn-download">More Details</a>
-                    <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-contact">Contact Us</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="video-container">
-                    <iframe src="" alt="IT Support Chatbot Solution using Google Cloud Technologies" allowfullscreen></iframe>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">IT Support Chatbot Solution using Google Cloud Technologies</h5>
-                    <p class="card-text">Developing a conversational AI virtual agent using Dialogflow CX
-                        Integrating Vertex AI for machine learning capabilities
-                        Implementing backend logic with Cloud Run and Cloud Functions
-                        Creating a scalable architecture that can handle varying levels of demand
-                        Designing natural language responses and conversation flows
-                        Training intent classification and entity recognition models
-                        Integrating with external systems such as ticketing tools and knowledge bases
-                        Deploying and monitoring the solution</p>
-                    <p><strong>Functionality</strong></p>
-                    <ul>
-                        <li>Natural language understanding and processing</li>
-                        <li>Automated ticket classification and routing</li>
-                        <li>Knowledge base integration</li>
-                        <li>Real-time response generation</li>
-                        <li>User authentication and authorization</li>
-                        <li>Analytics and reporting capabilities</li>
-                    </ul>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <a href="https://www.upwork.com/freelancers/~01986c2d270906c913?qpn-profile-completeness=employment&p=1812540302287028224" class="btn btn-download">More Details</a>
-                    <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-contact">Contact Us</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/OPDg4K8Ft9E" allowfullscreen></iframe>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Suggest personalized Investment Portfolio</h5>
-                    <p class="card-text">Start your investment journey by identifying your financial goals. They could be short-term like a vacation, medium-term like buying a car, or long-term like planning for retirement. Understanding your risk tolerance is crucial as it helps in deciding the asset allocation between equities, bonds, and other investments. Diversification across different asset classes is key to minimizing risk. Consider systematic investment plans (SIPs) for regular, disciplined investing. Regularly review and rebalance your portfolio to ensure it aligns with your goals.</p>
-                    <p><strong>Functionality</strong></p>
-                    <ul>
-                        <li>Risk assessment and profiling</li>
-                        <li>Asset allocation strategies</li>
-                        <li>Portfolio diversification analysis</li>
-                        <li>Investment goal tracking</li>
-                        <li>Regular portfolio rebalancing</li>
-                        <li>Performance monitoring and reporting</li>
-                    </ul>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <a href="https://www.fiverr.com/users/myephysics/portfolio/NjcyZGY5NTk2MWQ0NWUwMDAxNzcxY2Ux" class="btn btn-download">More Details</a>
-                    <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-contact">Contact Us</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="video-container">
-                    <iframe src="" allowfullscreen></iframe>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Legal Assist Chatbot</h5>
-                    <p class="card-text">Develop a Mental Health Chatbot designed to provide empathetic support in multiple languages, including Hindi and English, for users seeking mental health assistance. Leveraging advanced NLP, the chatbot will handle conversations with cultural sensitivity, addressing topics like stress, anxiety, and emotional well-being. Key features include personalized greetings, mood tracking, and a secure, confidential data environment, offering users a safe and accessible space to discuss mental health concerns in their preferred language.</p>
-                    <p><strong>Functionality</strong></p>
-                    <ul>
-                        <li>Legal document analysis and interpretation</li>
-                        <li>Case law research and citations</li>
-                        <li>Legal form automation</li>
-                        <li>Contract review assistance</li>
-                        <li>Regulatory compliance guidance</li>
-                        <li>Legal query response system</li>
-                    </ul>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <a href="https://www.fiverr.com/users/myephysics/portfolio/NjcyZGY5NTk2MWQ0NWUwMDAxNzcxY2Ux" class="btn btn-download">More Details</a>
-                    <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-contact">Contact Us</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="video-container">
-                    <iframe src="" allowfullscreen></iframe>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">𝗧𝗿𝗮𝗻𝘀𝗳𝗼𝗿𝗺𝗶𝗻𝗴 𝗛𝗥 𝗤𝘂𝗲𝗿𝘆 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁 𝘄𝗶𝘁𝗵 𝗔𝗜</h5>
-                    <p class="card-text">Develop a Mental Health Chatbot designed to provide empathetic support in multiple languages, including Hindi and English, for users seeking mental health assistance. Leveraging advanced NLP, the chatbot will handle conversations with cultural sensitivity, addressing topics like stress, anxiety, and emotional well-being. Key features include personalized greetings, mood tracking, and a secure, confidential data environment, offering users a safe and accessible space to discuss mental health concerns in their preferred language.</p>
-                    <p><strong>Functionality</strong></p>
-                    <ul>
-                        <li>Automated HR query handling</li>
-                        <li>Employee data management</li>
-                        <li>Leave and attendance tracking</li>
-                        <li>Performance analytics</li>
-                        <li>Policy document access</li>
-                        <li>Onboarding process automation</li>
-                    </ul>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <a href="https://www.fiverr.com/users/myephysics/portfolio/NjcyZGY5NTk2MWQ0NWUwMDAxNzcxY2Ux" class="btn btn-download">More Details</a>
-                    <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-contact">Contact Us</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/5E_Dhtys4ec" allowfullscreen></iframe>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">WebsiteGPT: AI-Powered Website Assistant</h5>
-                    <p class="card-text">WebsiteGPT is an innovative AI-powered web application that revolutionizes how businesses interact with their website content and documentation. By leveraging advanced language models and efficient information retrieval techniques, WebsiteGPT provides instant, accurate answers to user queries about your website or documentation.</p>
-                    <p><strong>Functionality</strong></p>
-                    <ul>
-                        <li>Vertex AI Agent Builder </li>
-                        <li>Real-time content analysis and indexing</li>
-                        <li>Instant, accurate responses to queries</li>
-                        <li>Customizable knowledge base integration</li>
-                        <li>Multi-language support</li>
-                        <li>Analytics and usage tracking</li>
-                    </ul>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <a href="https://www.fiverr.com/users/myephysics/portfolio/NjcyZGY5NTk2MWQ0NWUwMDAxNzcxY2Ux" class="btn btn-download">More Details</a>
-                    <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-contact">Contact Us</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/PuS7G8Ql4do" allowfullscreen></iframe>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Generate Visitor ID Cards web application</h5>
-                    <p class="card-text">Developed a secure and interactive web app for generating custom Visitor ID cards. Users enter details and upload photos to create personalized ID cards in real-time. The application features dynamic data entry, real-time previews, customizable templates, secure data storage, and multiple export formats (PDF, JPEG, PNG) . Features include live preview, multiple templates, secure data storage, and download/print options. Deployed on a scalable cloud platform for reliability and efficiency, this app streamlines visitor management for companies and events</p>
-                    <p><strong>Functionality</strong></p>
-                    <ul>
-                        <li>Real-time ID card preview</li>
-                        <li>Multiple customizable templates</li>
-                        <li>Secure photo upload and storage</li>
-                        <li>Multiple export formats (PDF, JPEG, PNG)</li>
-                        <li>Cloud-based data management</li>
-                        <li>Batch processing capability</li>
-                    </ul>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <a href="https://www.upwork.com/freelancers/~01e9fb34aeaa577a3e?p=1854426262101389312" class="btn btn-download">More Details</a>
-                    <a href="https://www.upwork.com/freelancers/~01e9fb34aeaa577a3e" class="btn btn-contact">Contact Us</a>
-                </div>
-            </div>
-        </div>
-
-        
-
-        <!-- Add more projects as needed, here we’re repeating for a total of 12 -->
-        <!-- Repeat the example card format above to create all 12 cards. -->
-    </div>
-</div>
-
-    <!-- Add Footer -->
-    <footer class="text-center">
+    <!-- Projects Section -->
+    <section class="project-grid">
         <div class="container">
-            <div class="social-icons my-3">
-                <a href="https://www.linkedin.com/in/amrutlal-kavaiya"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/amrutlal-kavaiya"><i class="fab fa-github"></i></a>
-                <a href="https://twitter.com/amrutlal_kavaiya"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.fiverr.com/myephysics?public_mode=true"><i class="fab fa-fiverr"></i></a>
-                <a href="https://www.upwork.com/freelancers/~01e9fb34aeaa577a3e"><i class="fab fa-upwork"></i></a>
+            <h2 class="text-center section-title fade-in">Featured Projects</h2>
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-lg-4 col-md-6 fade-in-up">
+                    <div class="card">
+                        <div class="video-container">
+                            <!-- Empty for Dialogflow Buddy -->
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Dialogflow Buddy</h5>
+                            <p class="card-text">Dialogflow Development Made Simple. Simplify your Dialogflow development process with our suite of powerful tools and features. Whether you're generating intents, creating routes, or analyzing performance, we've got you covered.</p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="https://dialogflow-buddy-tool.vercel.app/" class="btn btn-primary">Explore</a>
+                            <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-secondary">Contact</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-lg-4 col-md-6 fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/w6Lz4DGa_6k" allowfullscreen></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Mental Health Multilingual Chatbot</h5>
+                            <p class="card-text">A Mental Health Chatbot designed to provide empathetic support in multiple languages, leveraging advanced NLP to handle conversations with cultural sensitivity.</p>
+                            <p class="functionality-title">Core Features</p>
+                            <ul class="functionality-list">
+                                <li>Multilingual support (165+ languages)</li>
+                                <li>Empathetic conversation handling</li>
+                                <li>Personalized greetings and mood tracking</li>
+                                <li>Secure and confidential data environment</li>
+                                <li>Support for stress, anxiety, and emotional wellbeing</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="https://www.fiverr.com/users/myephysics/portfolio/NjcyZGY5NTk2MWQ0NWUwMDAxNzcxY2Ux" class="btn btn-primary">Details</a>
+                            <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-secondary">Contact</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-lg-4 col-md-6 fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/h7yNJclt3SU" allowfullscreen></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">HealthCare AI-Powered Solutions</h5>
+                            <p class="card-text">Advanced AI solutions for healthcare providers, enabling intelligent patient care, diagnostics, and medical data management.</p>
+                            <p class="functionality-title">Core Features</p>
+                            <ul class="functionality-list">
+                                <li>AI-powered symptom analysis</li>
+                                <li>Medical image processing</li>
+                                <li>Electronic Health Records integration</li>
+                                <li>Personalized treatment recommendations</li>
+                                <li>Remote patient monitoring and analytics</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="https://www.upwork.com/freelancers/~01986c2d270906c913?p=1837923385473990656" class="btn btn-primary">Details</a>
+                            <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-secondary">Contact</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="col-lg-4 col-md-6 fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/nXhfo_op2iU" allowfullscreen></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Kuber Bank Virtual Assistant</h5>
+                            <p class="card-text">A sophisticated virtual banking assistant providing seamless, secure, and intelligent banking services through advanced AI technologies.</p>
+                            <p class="functionality-title">Core Features</p>
+                            <ul class="functionality-list">
+                                <li>Real-time balance and transaction inquiries</li>
+                                <li>Comprehensive loan information and applications</li>
+                                <li>Smart branch and ATM locator</li>
+                                <li>Secure fund transfers and bill payments</li>
+                                <li>24/7 support in 165+ languages</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="https://www.fiverr.com/users/myephysics/portfolio/NjcyZGY5NTk2MWQ0NWUwMDAxNzcxY2Ux" class="btn btn-primary">Details</a>
+                            <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-secondary">Contact</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="col-lg-4 col-md-6 fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="card">
+                        <div class="video-container">
+                            <!-- Empty for IT Support Chatbot -->
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">IT Support Chatbot Solution</h5>
+                            <p class="card-text">A comprehensive IT support solution using Google Cloud Technologies, Dialogflow CX, and Vertex AI for intelligent technical assistance.</p>
+                            <p class="functionality-title">Core Features</p>
+                            <ul class="functionality-list">
+                                <li>Natural language understanding and processing</li>
+                                <li>Automated ticket classification and routing</li>
+                                <li>Knowledge base integration</li>
+                                <li>Real-time response generation</li>
+                                <li>User authentication and analytics</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="https://www.upwork.com/freelancers/~01986c2d270906c913?qpn-profile-completeness=employment&p=1812540302287028224" class="btn btn-primary">Details</a>
+                            <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-secondary">Contact</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="col-lg-4 col-md-6 fade-in-up" style="animation-delay: 0.5s;">
+                    <div class="card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/OPDg4K8Ft9E" allowfullscreen></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Investment Portfolio Advisor</h5>
+                            <p class="card-text">An AI-powered investment advisory tool that creates personalized investment strategies based on individual financial goals and risk profiles.</p>
+                            <p class="functionality-title">Core Features</p>
+                            <ul class="functionality-list">
+                                <li>Risk assessment and profiling</li>
+                                <li>Asset allocation strategies</li>
+                                <li>Portfolio diversification analysis</li>
+                                <li>Investment goal tracking</li>
+                                <li>Performance monitoring and rebalancing</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="https://www.fiverr.com/users/myephysics/portfolio/NjcyZGY5NTk2MWQ0NWUwMDAxNzcxY2Ux" class="btn btn-primary">Details</a>
+                            <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-secondary">Contact</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More projects... -->
+                <!-- Project 7 -->
+                <div class="col-lg-4 col-md-6 fade-in-up" style="animation-delay: 0.6s;">
+                    <div class="card">
+                        <div class="video-container">
+                            <!-- Empty for Legal Assist Chatbot -->
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Legal Assist Chatbot</h5>
+                            <p class="card-text">An intelligent legal assistant chatbot that helps users navigate complex legal processes, documents, and regulations with ease.</p>
+                            <p class="functionality-title">Core Features</p>
+                            <ul class="functionality-list">
+                                <li>Legal document analysis and interpretation</li>
+                                <li>Case law research and citations</li>
+                                <li>Legal form automation</li>
+                                <li>Contract review assistance</li>
+                                <li>Regulatory compliance guidance</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="https://www.fiverr.com/users/myephysics/portfolio/NjcyZGY5NTk2MWQ0NWUwMDAxNzcxY2Ux" class="btn btn-primary">Details</a>
+                            <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-secondary">Contact</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="col-lg-4 col-md-6 fade-in-up" style="animation-delay: 0.7s;">
+                    <div class="card">
+                        <div class="video-container">
+                            <!-- Empty for HR Query Management -->
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">HR Query Management with AI</h5>
+                            <p class="card-text">An AI-powered HR assistant that streamlines employee queries, automates HR processes, and provides insights into workforce management.</p>
+                            <p class="functionality-title">Core Features</p>
+                            <ul class="functionality-list">
+                                <li>Automated HR query handling</li>
+                                <li>Employee data management</li>
+                                <li>Leave and attendance tracking</li>
+                                <li>Performance analytics</li>
+                                <li>Policy document access and onboarding automation</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="https://www.fiverr.com/users/myephysics/portfolio/NjcyZGY5NTk2MWQ0NWUwMDAxNzcxY2Ux" class="btn btn-primary">Details</a>
+                            <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-secondary">Contact</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="col-lg-4 col-md-6 fade-in-up" style="animation-delay: 0.8s;">
+                    <div class="card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/5E_Dhtys4ec" allowfullscreen></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">WebsiteGPT: AI Website Assistant</h5>
+                            <p class="card-text">An innovative AI-powered web application that revolutionizes how businesses interact with their website content and documentation.</p>
+                            <p class="functionality-title">Core Features</p>
+                            <ul class="functionality-list">
+                                <li>Vertex AI Agent Builder integration</li>
+                                <li>Real-time content analysis and indexing</li>
+                                <li>Instant, accurate query responses</li>
+                                <li>Customizable knowledge base</li>
+                                <li>Multi-language support and usage analytics</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="https://www.fiverr.com/users/myephysics/portfolio/NjcyZGY5NTk2MWQ0NWUwMDAxNzcxY2Ux" class="btn btn-primary">Details</a>
+                            <a href="https://www.fiverr.com/users/myephysics/portfolio/" class="btn btn-secondary">Contact</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 10 -->
+                <div class="col-lg-4 col-md-6 fade-in-up" style="animation-delay: 0.9s;">
+                    <div class="card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/PuS7G8Ql4do" allowfullscreen></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Visitor ID Card Generator</h5>
+                            <p class="card-text">A secure and interactive web application for generating custom Visitor ID cards with real-time previews and multiple export options.</p>
+                            <p class="functionality-title">Core Features</p>
+                            <ul class="functionality-list">
+                                <li>Real-time ID card preview</li>
+                                <li>Multiple customizable templates</li>
+                                <li>Secure photo upload and storage</li>
+                                <li>Multiple export formats (PDF, JPEG, PNG)</li>
+                                <li>Cloud-based data management and batch processing</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="https://www.upwork.com/freelancers/~01e9fb34aeaa577a3e?p=1854426262101389312" class="btn btn-primary">Details</a>
+                            <a href="https://www.upwork.com/freelancers/~01e9fb34aeaa577a3e" class="btn btn-secondary">Contact</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p>&copy; 2024 Conversation AI Specialist. All Rights Reserved.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h4 class="footer-heading">Let's Connect</h4>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/amrutlal-kavaiya" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/amrutlal-kavaiya" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/amrutlal_kavaiya" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.fiverr.com/myephysics?public_mode=true" aria-label="Fiverr"><i class="fab fa-fiverr"></i></a>
+                        <a href="https://www.upwork.com/freelancers/~01e9fb34aeaa577a3e" aria-label="Upwork"><i class="fab fa-upwork"></i></a>
+                    </div>
+                    <p class="copyright">&copy; 2025 Conversation AI Specialist. All Rights Reserved.</p>
+                </div>
+            </div>
         </div>
     </footer>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 10) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Intersection Observer for fade-in animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            const fadeElements = document.querySelectorAll('.fade-in-up');
+            fadeElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
