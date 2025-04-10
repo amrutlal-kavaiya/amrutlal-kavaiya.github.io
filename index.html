@@ -1,555 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amrutlal Kavaiya - Conversation AI Specialist</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #0062b1;
-            --primary-light: #007be2;
-            --primary-dark: #004d8c;
-            --accent: #36b6ff;
-            --accent-soft: rgba(54, 182, 255, 0.1);
-            --neutral-light: #f8fafd;
-            --neutral-dark: #2c3e50;
-            --text-primary: #1a2a3a;
-            --text-secondary: #596677;
-            --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.05);
-            --shadow-medium: 0 10px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--neutral-light);
-            color: var(--text-primary);
-            padding-top: 76px;
-            line-height: 1.7;
-        }
-        
-        .navbar {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            padding: 0.8rem 1rem;
-            box-shadow: var(--shadow-soft);
-            transition: all 0.3s ease;
-        }
-        
-        .navbar.scrolled {
-            padding: 0.5rem 1rem;
-            background: var(--primary-dark);
-        }
-        
-        .navbar-brand {
-            font-weight: 600;
-            font-size: 1.2rem;
-            color: white;
-            letter-spacing: -0.02em;
-        }
-        
-        .navbar-nav .nav-link {
-            color: rgba(255, 255, 255, 0.85);
-            margin-left: 1.5rem;
-            font-weight: 500;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-        
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: white;
-            transition: width 0.3s ease;
-        }
-        
-        .navbar-nav .nav-link:hover {
-            color: white;
-        }
-        
-        .navbar-nav .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .hero {
-            background: linear-gradient(120deg, rgba(0, 98, 177, 0.92), rgba(0, 77, 140, 0.94)), url('https://source.unsplash.com/1600x900/?technology,ai') no-repeat center center;
-            background-size: cover;
-            color: white;
-            padding: 9rem 0 7rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 30% 50%, rgba(54, 182, 255, 0.2) 0%, transparent 70%);
-        }
-        
-        .hero h1 {
-            font-weight: 700;
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            letter-spacing: -0.03em;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            font-weight: 300;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            opacity: 0.95;
-        }
-        
-        .btn-primary {
-            background-color: var(--accent);
-            border: none;
-            padding: 0.8rem 2rem;
-            font-weight: 500;
-            border-radius: 6px;
-            box-shadow: 0 4px 14px rgba(54, 182, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--accent);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(54, 182, 255, 0.4);
-        }
-        
-        .section {
-            padding: 6rem 0;
-        }
-        
-        .section-title {
-            margin-bottom: 4rem;
-            font-weight: 700;
-            font-size: 2.2rem;
-            text-align: center;
-            color: var(--text-primary);
-            position: relative;
-            letter-spacing: -0.02em;
-        }
-        
-        .section-title::after {
-            content: '';
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            display: block;
-            margin: 1rem auto 0;
-            border-radius: 3px;
-        }
-        
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            text-align: center;
-            line-height: 1.8;
-        }
-        
-        .skill-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2.5rem 1.5rem;
-            box-shadow: var(--shadow-soft);
-            height: 100%;
-            transition: all 0.3s ease;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
-        }
-        
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 0;
-            background: linear-gradient(135deg, var(--accent-soft), rgba(0, 98, 177, 0.05));
-            z-index: -1;
-            transition: height 0.5s ease;
-        }
-        
-        .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .skill-card:hover::before {
-            height: 100%;
-        }
-        
-        .skill-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 70px;
-            height: 70px;
-            border-radius: 20px;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #e6f5ff, #cceeff);
-            color: var(--primary);
-            font-size: 1.8rem;
-        }
-        
-        .skill-card h5 {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            color: var(--text-primary);
-        }
-        
-        .skill-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-        
-        .project-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-soft);
-            transition: all 0.3s ease;
-            height: 100%;
-            position: relative;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 0;
-            background: linear-gradient(to bottom, var(--primary), var(--accent));
-            transition: height 0.3s ease;
-        }
-        
-        .project-card:hover::before {
-            height: 100%;
-        }
-        
-        .project-body {
-            padding: 1.5rem;
-        }
-        
-        .project-title {
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-        
-        .project-text {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-        
-        .contact-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            padding: 5rem 0;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .contact-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle at center, rgba(54, 182, 255, 0.3) 0%, transparent 70%);
-            border-radius: 100%;
-            transform: translate(30%, -30%);
-        }
-        
-        .btn-outline-light {
-            border-width: 2px;
-            font-weight: 500;
-            padding: 0.8rem 2rem;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-outline-light:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
-        }
-        
-        footer {
-            background: var(--neutral-dark);
-            color: white;
-            padding: 3rem 0 2rem;
-        }
-        
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 0.5rem;
-            }
-            
-            .hero {
-                padding-top: 6rem;
-                padding-bottom: 4rem;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .section {
-                padding: 4rem 0;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-                margin-bottom: 3rem;
-            }
-            
-            .navbar-nav .nav-link {
-                margin-left: 0;
-                margin-top: 0.5rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amrutlal Kavaiya — Ghibli‑Style Portfolio</title>
+
+  <!-- Bootstrap (optional for grid/layout) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Ghibli‑style fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&family=Kosugi+Maru&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      /* Ghibli palette */
+      --primary:       #8fae9f;
+      --primary-light: #b8d8c4;
+      --primary-dark:  #6f8f80;
+      --accent:        #f4e3b2;
+      --accent-soft:   rgba(244, 227, 178, 0.3);
+      --neutral-light: #faf6f0;
+      --neutral-dark:  #2c2a29;
+      --text-primary:  #2c2a29;
+      --text-secondary:#555146;
+      --shadow-soft:   0 6px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Base */
+    body {
+      margin: 0;
+      font-family: 'Kosugi Maru', sans-serif;
+      background-color: var(--neutral-light);
+      background-image: url('/assets/textures/paper-fibers.png');
+      background-size: cover;
+      color: var(--text-primary);
+      line-height: 1.7;
+      padding-top: 76px;
+      overflow-x: hidden;
+    }
+
+    h1, .section-title {
+      font-family: 'Sawarabi Mincho', serif;
+      letter-spacing: 0.02em;
+      color: var(--text-primary);
+    }
+
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      box-shadow: var(--shadow-soft);
+      transition: all 0.3s ease;
+    }
+    .navbar.scrolled {
+      background: var(--primary-dark);
+    }
+    .navbar-brand, .nav-link {
+      color: white !important;
+    }
+    .nav-link {
+      margin-left: 1.5rem;
+      font-weight: 500;
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: white;
+      transition: width 0.3s;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 9rem 0 7rem;
+      background: url('/assets/ghibli-sky.jpg') center/cover no-repeat fixed;
+      color: white;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 30% 50%, var(--accent-soft), transparent 70%);
+    }
+    .hero h1 {
+      font-size: 3rem; font-weight: 700; margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem; max-width: 700px; margin: auto 0 2rem; opacity: .9;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--text-primary);
+      border: none;
+      padding: .8rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(244,227,178,0.4);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(244,227,178,0.5);
+    }
+
+    /* Sections */
+    .section { padding: 6rem 0; }
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px; height: 3px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      margin: .8rem auto 0;
+      border-radius: 2px;
+    }
+    .about-content {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    /* Cards */
+    .skill-card, .project-card {
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: var(--shadow-soft);
+      border-radius: 16px;
+      transition: transform .3s, box-shadow .3s;
+      overflow: hidden;
+      position: relative;
+      padding: 2rem 1.5rem;
+    }
+    .skill-card:hover, .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    .skill-icon {
+      width: 70px; height: 70px;
+      margin-bottom: 1rem;
+    }
+    .skill-card h5, .project-title {
+      font-weight: 600; margin-bottom: .8rem;
+      color: var(--text-primary);
+    }
+    .skill-card p, .project-text {
+      color: var(--text-secondary);
+      font-size: .95rem;
+      line-height: 1.6;
+    }
+
+    /* Contact */
+    .contact-section {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 5rem 0;
+      position: relative;
+    }
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      top: -50px; right: -50px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle at center, var(--accent-soft), transparent 70%);
+      border-radius: 50%;
+    }
+    .btn-outline-light {
+      border: 2px solid white;
+      color: white;
+      padding: .8rem 2rem;
+      border-radius: 8px;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .btn-outline-light:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255,255,255,0.2);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--neutral-dark);
+      color: white;
+      padding: 3rem 0 2rem;
+    }
+    .social-icons a {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 42px; height: 42px; margin: 0 .5rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: transform .3s, background .3s;
+    }
+    .social-icons a:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+    .copyright {
+      opacity: .7; font-size: .9rem;
+    }
+
+    /* Floating petals */
+    @keyframes float {
+      from { transform: translateY(0) rotate(0deg); }
+      to   { transform: translateY(-30px) rotate(360deg); }
+    }
+    .petal {
+      position: absolute;
+      width: 30px; height: 30px;
+      background: url('/assets/flower-petal.svg') no-repeat center/contain;
+      animation: float 6s ease-in-out infinite alternate;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .hero { padding: 6rem 0 4rem; }
+      .hero h1 { font-size: 2rem; }
+      .section { padding: 4rem 0; }
+      .section-title { font-size: 1.8rem; margin-bottom: 2rem; }
+      .nav-link { margin: .5rem 0; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Conversation AI Specialist</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header class="hero text-center">
-        <div class="container">
-            <h1>Chatbot Developer & AI Specialist</h1>
-            <p>Delivering intelligent, innovative solutions to enhance customer experiences with AI-powered chatbots and virtual assistants.</p>
-            <a href="#contact" class="btn btn-primary">Get In Touch</a>
-        </div>
-    </header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Conversation AI Specialist</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse justify-content-end" id="nav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>I am Amrutlal Kavaiya, an AI and Machine Learning Specialist with extensive experience in developing intelligent chatbot solutions for various industries, including healthcare, finance, and IT support. My passion lies in leveraging artificial intelligence to solve real-world problems and improve user experiences through advanced conversational interfaces.</p>
-            </div>
-        </div>
-    </section>
+  <!-- Hero with petals -->
+  <header class="hero">
+    <div class="container">
+      <h1>Chatbot Developer &amp; AI Specialist</h1>
+      <p>Delivering intelligent, innovative solutions to enhance customer experiences with AI-powered chatbots and virtual assistants.</p>
+      <a href="#contact" class="btn btn-primary">Get In Touch</a>
+    </div>
+    <!-- floating petals -->
+    <div class="petal" style="top:80%; left:20%; animation-delay:1s;"></div>
+    <div class="petal" style="top:70%; left:50%; animation-delay:3s;"></div>
+    <div class="petal" style="top:85%; left:75%; animation-delay:2s;"></div>
+    <div class="petal" style="top:60%; left:30%; animation-delay:4s;"></div>
+  </header>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <h5>Conversational AI</h5>
-                        <p>Expertise in building chatbot solutions using Dialogflow, Rasa, and Microsoft Bot Framework. Proficient in integrating chatbots with multiple platforms to provide seamless user experiences.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h5>Machine Learning & NLP</h5>
-                        <p>Skilled in developing machine learning models for natural language processing, including intent classification, entity recognition, and sentiment analysis using TensorFlow, scikit-learn, and PyTorch.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h5>Cloud Technologies</h5>
-                        <p>Experience with deploying AI solutions on cloud platforms such as Google Cloud, AWS, and Azure. Proficient in using services like Cloud Functions, Cloud Run, and BigQuery for scalable deployments.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <p>I am Amrutlal Kavaiya, an AI and Machine Learning Specialist with extensive experience in developing intelligent chatbot solutions for various industries, including healthcare, finance, and IT support. My passion lies in leveraging artificial intelligence to solve real-world problems and improve user experiences through advanced conversational interfaces.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Freelancer Projects</h2>
-            <div class="row">
-                <!-- Project 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="project-card">
-                        <div class="project-body">
-                            <h5 class="project-title">MediRAG - Intelligent Healthcare Solutions</h5>
-                            <p class="project-text">MediRAG is a healthcare chatbot leveraging RAG architecture to provide contextually accurate healthcare responses. Implemented using Google Cloud technologies and designed to enhance patient care.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="col-md-4 mb-4">
-                    <div class="project-card">
-                        <div class="project-body">
-                            <h5 class="project-title">Legal Assist Chatbot</h5>
-                            <p class="project-text">A multilingual AI chatbot designed to provide legal information and summarize court documents in multiple Indian languages. Utilized RAG architecture, Dialogflow, and Google Cloud to create an accessible legal resource.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="col-md-4 mb-4">
-                    <div class="project-card">
-                        <div class="project-body">
-                            <h5 class="project-title">Medical Office Receptionist Chatbot</h5>
-                            <p class="project-text">Developed a digital receptionist for a primary care office using Dialogflow CX. The chatbot manages appointment scheduling, Google Calendar integration, and SMS reminders, ensuring seamless patient interactions.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 4 -->
-                <div class="col-md-4 mb-4">
-                    <div class="project-card">
-                        <div class="project-body">
-                            <h5 class="project-title">BankBuddy - AI-Powered Banking Assistant</h5>
-                            <p class="project-text">Created an AI ecosystem for banking services, offering personalized financial advice, fraud detection, and automation of basic transactions. Integrated Google Cloud, Dialogflow CX, and Vertex AI for a secure, user-friendly experience.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 5 -->
-                <div class="col-md-4 mb-4">
-                    <div class="project-card">
-                        <div class="project-body">
-                            <h5 class="project-title">IT Support Contact Center Solution</h5>
-                            <p class="project-text">Developed an IT support chatbot leveraging Google Cloud services like Dialogflow CX, Vertex AI, Cloud Functions, and Cloud Run. Designed to provide efficient 24/7 support, automating basic tasks, and routing complex issues to human agents.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 6 -->
-                <div class="col-md-4 mb-4">
-                    <div class="project-card">
-                        <div class="project-body">
-                            <h5 class="project-title">Investment Planner Web Application</h5>
-                            <p class="project-text">Created a Streamlit web application to assist users in generating personalized investment plans based on financial goals, risk tolerance, and current financial situations. The application integrates advanced financial algorithms to provide accurate suggestions.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- Skills -->
+  <section id="skills" class="section bg-light">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="skill-card text-center">
+            <img src="/assets/icons/chat-bubble-handdrawn.svg" alt="Conversational AI" class="skill-icon"/>
+            <h5>Conversational AI</h5>
+            <p>Building chatbot solutions using Dialogflow, Rasa, and Microsoft Bot Framework. Seamless multi-platform integration.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container text-center">
-            <h2 class="section-title mb-4">Contact Me</h2>
-            <p class="mb-4">If you have any questions or would like to discuss a project, feel free to get in touch!</p>
-            <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Me</a>
+        <div class="col-md-4 mb-4">
+          <div class="skill-card text-center">
+            <img src="/assets/icons/brain-handdrawn.svg" alt="Machine Learning" class="skill-icon"/>
+            <h5>Machine Learning &amp; NLP</h5>
+            <p>Developing models for intent classification, entity recognition, sentiment analysis with TensorFlow, scikit-learn, PyTorch.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="text-center">
-        <div class="container">
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/amrutlal-kavaiya"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/amrutlal-kavaiya"><i class="fab fa-github"></i></a>
-                <a href="https://twitter.com/amrutlal_kavaiya"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.fiverr.com/myephysics?public_mode=true"><i class="fab fa-fiverr"></i></a>
-                <a href="https://www.upwork.com/freelancers/~01e9fb34aeaa577a3e"><i class="fab fa-upwork"></i></a>
-            </div>
-            <p class="copyright">&copy; 2024 Conversation AI Specialist. All Rights Reserved.</p>
+        <div class="col-md-4 mb-4">
+          <div class="skill-card text-center">
+            <img src="/assets/icons/cloud-handdrawn.svg" alt="Cloud Technologies" class="skill-icon"/>
+            <h5>Cloud Technologies</h5>
+            <p>Deploying AI on GCP, AWS, Azure. Using Cloud Functions, Cloud Run, BigQuery for scalable solutions.</p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-    </script>
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title">Freelancer Projects</h2>
+      <div class="row">
+        <!-- Repeat project-card blocks as needed -->
+        <div class="col-md-4 mb-4">
+          <div class="project-card">
+            <h5 class="project-title">MediRAG - Intelligent Healthcare Solutions</h5>
+            <p class="project-text">Healthcare chatbot using RAG architecture on Google Cloud to enhance patient care.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="project-card">
+            <h5 class="project-title">Legal Assist Chatbot</h5>
+            <p class="project-text">Multilingual AI chatbot for legal info & document summaries in Indian languages.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="project-card">
+            <h5 class="project-title">Medical Office Receptionist</h5>
+            <p class="project-text">Digital receptionist with appointment scheduling, calendar & SMS reminders via Dialogflow CX.</p>
+          </div>
+        </div>
+        <!-- add other projects here... -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section text-center">
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+      <p>If you have any questions or would like to discuss a project, feel free to get in touch!</p>
+      <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <div class="social-icons">
+        <a href="#"><img src="/assets/icons/linkedin.svg" alt="LinkedIn"/></a>
+        <a href="#"><img src="/assets/icons/github.svg" alt="GitHub"/></a>
+        <a href="#"><img src="/assets/icons/twitter.svg" alt="Twitter"/></a>
+      </div>
+      <p class="copyright">&copy; 2024 Conversation AI Specialist. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+      // Parallax for hero
+      const y = window.scrollY / 2;
+      document.querySelector('.hero').style.backgroundPosition = `center ${-y}px`;
+    });
+  </script>
 </body>
 </html>
