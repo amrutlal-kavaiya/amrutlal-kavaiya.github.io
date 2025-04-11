@@ -5,308 +5,355 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact — Amrutlal Kavaiya</title>
 
-  <!-- Bootstrap (optional) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-
-  <!-- Ghibli‑style fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&family=Kosugi+Maru&display=swap" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Product+Sans:wght@400;700&display=swap" rel="stylesheet"/>
 
   <style>
+    /* Google-inspired CSS Variables */
     :root {
-      /* Ghibli palette */
-      --primary:       #8fae9f;
-      --primary-light: #b8d8c4;
-      --primary-dark:  #6f8f80;
-      --accent:        #f4e3b2;
-      --accent-soft:   rgba(244, 227, 178, 0.3);
-      --neutral-light: #faf6f0;
-      --neutral-dark:  #2c2a29;
-      --text-primary:  #2c2a29;
-      --text-secondary:#555146;
-      --shadow-soft:   0 6px 20px rgba(0, 0, 0, 0.04);
-      --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.08);
+      --google-blue: #4285F4;
+      --google-red: #EA4335;
+      --google-yellow: #FBBC05;
+      --google-green: #34A853;
+      --background: #ffffff;
+      --text-primary: #202124;
+      --text-secondary: #5f6368;
+      --border-color: #dadce0;
+      --hover-color: #f1f3f4;
+      --shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
     }
 
-    /* Base */
-    body {
+    /* Base Styles */
+    * {
       margin: 0;
-      font-family: 'Kosugi Maru', sans-serif;
-      background-color: var(--neutral-light);
-      background-image: url('/assets/textures/paper-fibers.png');
-      background-size: cover;
-      color: var(--text-primary);
-      line-height: 1.7;
-      padding-top: 76px;
-      overflow-x: hidden;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    h1, .section-title {
-      font-family: 'Sawarabi Mincho', serif;
-      letter-spacing: 0.02em;
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--background);
       color: var(--text-primary);
+      line-height: 1.5;
     }
 
-    /* Navbar */
-    .navbar {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      box-shadow: var(--shadow-soft);
-      transition: all 0.3s ease;
+    a {
+      text-decoration: none;
+      color: var(--google-blue);
     }
-    .navbar.scrolled {
-      background: var(--primary-dark);
+
+    img {
+      max-width: 100%;
     }
-    .navbar-brand, .nav-link {
-      color: white !important;
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
-    .nav-link {
-      margin-left: 1.5rem;
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      background-color: var(--background);
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Product Sans', sans-serif;
+      font-size: 22px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+    }
+
+    .logo span {
+      margin-right: 6px;
+      display: inline-block;
+    }
+
+    .logo span:nth-child(1) { color: var(--google-blue); }
+    .logo span:nth-child(2) { color: var(--google-red); }
+    .logo span:nth-child(3) { color: var(--google-yellow); }
+    .logo span:nth-child(4) { color: var(--google-green); }
+    .logo span:nth-child(5) { color: var(--google-blue); }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav li {
+      margin-left: 24px;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      font-size: 14px;
       font-weight: 500;
+      padding: 8px 0;
       position: relative;
     }
-    .nav-link::after {
+
+    nav a:hover {
+      color: var(--text-primary);
+    }
+
+    nav a::after {
       content: '';
       position: absolute;
-      bottom: 0; left: 0;
-      width: 0; height: 2px;
-      background: white;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--google-blue);
       transition: width 0.3s;
     }
-    .nav-link:hover::after { width: 100%; }
 
-    /* Hero Contact */
-    .hero-contact {
-      position: relative;
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
       text-align: center;
-      padding: 7rem 0 5rem;
-      background: url('/assets/ghibli-sky.jpg') center/cover no-repeat fixed;
-      color: white;
-    }
-    .hero-contact::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(circle at 30% 50%, var(--accent-soft), transparent 70%);
-    }
-    .hero-contact h1 {
-      font-size: 3rem; font-weight: 700; margin-bottom: 1rem;
-    }
-    .hero-contact p {
-      font-size: 1.2rem; max-width: 700px; margin: auto; opacity: .9;
-      color: var(--neutral-dark);
+      padding: 80px 20px;
+      background-color: #f8f9fa;
+      border-bottom: 1px solid var(--border-color);
     }
 
-    /* Floating petals */
-    @keyframes float {
-      from { transform: translateY(0) rotate(0deg); }
-      to   { transform: translateY(-30px) rotate(360deg); }
-    }
-    .petal {
-      position: absolute;
-      width: 30px; height: 30px;
-      background: url('/assets/flower-petal.svg') no-repeat center/contain;
-      animation: float 6s ease-in-out infinite alternate;
+    .hero h1 {
+      font-family: 'Product Sans', sans-serif;
+      font-size: 42px;
+      margin-bottom: 16px;
+      color: var(--text-primary);
     }
 
-    /* Section titles */
+    .hero p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 60px 0;
+    }
+
     .section-title {
-      font-size: 2.2rem;
-      margin: 2rem 0 1.5rem;
-      position: relative;
-    }
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 60px; height: 3px;
-      background: linear-gradient(to right, var(--primary), var(--accent));
-      margin: .8rem auto 0;
-      border-radius: 2px;
+      font-family: 'Product Sans', sans-serif;
+      font-size: 28px;
+      color: var(--text-primary);
+      margin-bottom: 40px;
+      text-align: center;
     }
 
-    /* Contact cards */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
     .contact-card {
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(2px);
-      border: 1px solid rgba(0,0,0,0.03);
-      box-shadow: var(--shadow-soft);
-      border-radius: 16px;
-      padding: 2rem 1.5rem;
+      background-color: var(--background);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 24px;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-      transition: transform .3s, box-shadow .3s;
-      height: 100%;
+      transition: box-shadow 0.3s, transform 0.3s;
     }
-    .contact-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 0;
-      background: linear-gradient(135deg, var(--accent-soft), rgba(0,0,0,0.02));
-      z-index: -1;
-      transition: height .5s ease;
-    }
+
     .contact-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-medium);
-    }
-    .contact-card:hover::before {
-      height: 100%;
+      box-shadow: var(--shadow);
+      transform: translateY(-4px);
     }
 
     .contact-icon-wrapper {
-      width: 80px; height: 80px;
-      margin: 0 auto 1rem;
-      background: rgba(244,227,178,0.3);
-      border-radius: 24px;
-      display: flex; align-items: center; justify-content: center;
-      transition: transform .3s;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f1f3f4;
+      border-radius: 50%;
     }
-    .contact-card:hover .contact-icon-wrapper {
-      transform: scale(1.1);
-      background: rgba(244,227,178,0.4);
+
+    .contact-icon {
+      width: 30px;
+      height: 30px;
+      opacity: 0.7;
     }
-    .contact-icon-wrapper img {
-      width: 40px; height: 40px;
+
+    .contact-card:nth-child(1) .contact-icon-wrapper {
+      color: var(--google-red);
+    }
+
+    .contact-card:nth-child(2) .contact-icon-wrapper {
+      color: var(--google-green);
+    }
+
+    .contact-card:nth-child(3) .contact-icon-wrapper {
+      color: var(--google-yellow);
+    }
+
+    .contact-card:nth-child(4) .contact-icon-wrapper {
+      color: var(--google-blue);
+    }
+
+    .contact-card:nth-child(5) .contact-icon-wrapper {
+      color: var(--text-primary);
     }
 
     .contact-title {
-      font-weight: 600;
-      margin-bottom: .8rem;
-      font-size: 1.3rem;
+      font-family: 'Product Sans', sans-serif;
+      font-size: 18px;
+      margin-bottom: 12px;
       color: var(--text-primary);
     }
+
     .contact-link {
-      font-weight: 500;
-      color: var(--primary);
-      text-decoration: none;
-      position: relative;
+      color: var(--google-blue);
+      font-size: 14px;
+      transition: color 0.3s;
     }
-    .contact-link::after {
-      content: '';
-      position: absolute; bottom: -2px; left: 0;
-      width: 0; height: 2px;
-      background: linear-gradient(to right, var(--primary), var(--accent));
-      transition: width .3s;
+
+    .contact-link:hover {
+      text-decoration: underline;
     }
-    .contact-link:hover::after { width: 100%; }
-    .contact-link:hover { color: var(--accent); }
 
     /* Footer */
     footer {
-      background: var(--neutral-dark);
-      color: white;
-      padding: 3rem 0 2rem;
-      margin-top: 4rem;
-    }
-    .social-icons {
-      display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;
-    }
-    .social-icons a {
-      width: 42px; height: 42px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      transition: background .3s, transform .3s;
-    }
-    .social-icons a img {
-      width: 24px; height: 24px;
-    }
-    .social-icons a:hover {
-      background: var(--accent);
-      transform: translateY(-3px);
-    }
-    .copyright {
-      opacity: .7; font-size: .9rem;
+      padding: 40px 0;
+      text-align: center;
+      background-color: #f8f9fa;
+      color: var(--text-secondary);
+      font-size: 14px;
+      border-top: 1px solid var(--border-color);
     }
 
-    /* Responsive */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .social-icon {
+      width: 24px;
+      height: 24px;
+      opacity: 0.6;
+      transition: opacity 0.3s;
+    }
+
+    .social-icon:hover {
+      opacity: 1;
+    }
+
+    /* Media Queries */
     @media (max-width: 768px) {
-      .hero-contact { padding: 5rem 0 3rem; }
-      .hero-contact h1 { font-size: 2rem; }
-      .section-title { font-size: 1.8rem; margin-bottom: 1.5rem; }
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
     }
   </style>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="/">Conversation AI Specialist</a>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse justify-content-end" id="nav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="/">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="/#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="/projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Contact -->
-  <header class="hero-contact">
-    <div class="container">
-      <h1>Get In Touch</h1>
-      <p>Let’s discuss how we can create magical AI experiences together.</p>
-    </div>
-    <!-- floating petals -->
-    <div class="petal" style="top:75%; left:15%; animation-delay:1s;"></div>
-    <div class="petal" style="top:65%; left:60%; animation-delay:3s;"></div>
-    <div class="petal" style="top:85%; left:45%; animation-delay:2s;"></div>
+  <!-- Header -->
+  <header>
+    <a href="/" class="logo">
+      <span>A</span><span>m</span><span>r</span><span>u</span><span>t</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Get in Touch</h1>
+    <p>Have a question or want to work together? I'd love to hear from you.</p>
+  </section>
+
   <!-- Contact Section -->
-  <section class="container">
-    <h2 class="section-title text-center">Connect With Me</h2>
-    <div class="row">
-      <!-- Email -->
-      <div class="col-md-4 mb-4">
+  <section class="contact-section">
+    <div class="container">
+      <h2 class="section-title">Connect With Me</h2>
+      <div class="contact-grid">
+        <!-- Email -->
         <div class="contact-card">
           <div class="contact-icon-wrapper">
-            <img src="/assets/icons/email-handdrawn.svg" alt="Email"/>
+            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
           </div>
           <h3 class="contact-title">Email</h3>
-          <p><a href="mailto:arkavaiya@gmail.com" class="contact-link">arkavaiya@gmail.com</a></p>
+          <a href="mailto:arkavaiya@gmail.com" class="contact-link">arkavaiya@gmail.com</a>
         </div>
-      </div>
-      <!-- Upwork -->
-      <div class="col-md-4 mb-4">
+        
+        <!-- Upwork -->
         <div class="contact-card">
           <div class="contact-icon-wrapper">
-            <img src="/assets/icons/upwork-handdrawn.svg" alt="Upwork"/>
+            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/>
+            </svg>
           </div>
           <h3 class="contact-title">Upwork</h3>
-          <p><a href="https://www.upwork.com/freelancers/~01e9fb34aeaa577a3e" class="contact-link" target="_blank">View My Profile</a></p>
+          <a href="https://www.upwork.com/freelancers/~01e9fb34aeaa577a3e" class="contact-link" target="_blank">View My Profile</a>
         </div>
-      </div>
-      <!-- Fiverr -->
-      <div class="col-md-4 mb-4">
+        
+        <!-- Fiverr -->
         <div class="contact-card">
           <div class="contact-icon-wrapper">
-            <img src="/assets/icons/fiverr-handdrawn.svg" alt="Fiverr"/>
+            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16.25 16.25v-10h-10v10h10m0-16A6.25 6.25 0 0 1 22.5 6.25v11.5A6.25 6.25 0 0 1 16.25 24h-11.5A6.25 6.25 0 0 1 0 17.75V6.25A6.25 6.25 0 0 1 6.25 0h11.5m-5 7a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-3m-4 7h3v-1h-3v1z"/>
+            </svg>
           </div>
           <h3 class="contact-title">Fiverr</h3>
-          <p><a href="https://www.fiverr.com/myephysics?public_mode=true" class="contact-link" target="_blank">View My Gigs</a></p>
+          <a href="https://www.fiverr.com/myephysics?public_mode=true" class="contact-link" target="_blank">View My Gigs</a>
         </div>
-      </div>
-      <!-- LinkedIn -->
-      <div class="col-md-6 mb-4">
+        
+        <!-- LinkedIn -->
         <div class="contact-card">
           <div class="contact-icon-wrapper">
-            <img src="/assets/icons/linkedin-handdrawn.svg" alt="LinkedIn"/>
+            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+            </svg>
           </div>
           <h3 class="contact-title">LinkedIn</h3>
-          <p><a href="https://www.linkedin.com/in/amrutlal-kavaiya" class="contact-link" target="_blank">Connect With Me</a></p>
+          <a href="https://www.linkedin.com/in/amrutlal-kavaiya" class="contact-link" target="_blank">Connect With Me</a>
         </div>
-      </div>
-      <!-- GitHub -->
-      <div class="col-md-6 mb-4">
+        
+        <!-- GitHub -->
         <div class="contact-card">
           <div class="contact-icon-wrapper">
-            <img src="/assets/icons/github-handdrawn.svg" alt="GitHub"/>
+            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
           </div>
           <h3 class="contact-title">GitHub</h3>
-          <p><a href="https://github.com/amrutlal-kavaiya" class="contact-link" target="_blank">View My Projects</a></p>
+          <a href="https://github.com/amrutlal-kavaiya" class="contact-link" target="_blank">View My Projects</a>
         </div>
       </div>
     </div>
@@ -314,24 +361,20 @@
 
   <!-- Footer -->
   <footer>
-    <div class="container text-center">
+    <div class="container">
       <div class="social-icons">
-        <a href="https://www.linkedin.com/in/amrutlal-kavaiya"><img src="/assets/icons/linkedin-handdrawn.svg" alt="LinkedIn"/></a>
-        <a href="https://github.com/amrutlal-kavaiya"><img src="/assets/icons/github-handdrawn.svg" alt="GitHub"/></a>
-        <a href="https://twitter.com/amrutlal_kavaiya"><img src="/assets/icons/twitter-handdrawn.svg" alt="Twitter"/></a>
+        <a href="https://www.linkedin.com/in/amrutlal-kavaiya" target="_blank">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
+        </a>
+        <a href="https://github.com/amrutlal-kavaiya" target="_blank">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" alt="GitHub" class="social-icon">
+        </a>
+        <a href="https://twitter.com/amrutlal_kavaiya" target="_blank">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/twitter.svg" alt="Twitter" class="social-icon">
+        </a>
       </div>
-      <p class="copyright">&copy; 2024 Conversation AI Specialist. All Rights Reserved.</p>
+      <p>&copy; 2025 Amrutlal Kavaiya. All Rights Reserved.</p>
     </div>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Navbar scroll + parallax
-    window.addEventListener('scroll', () => {
-      document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
-      const y = window.scrollY / 2;
-      document.querySelector('.hero-contact').style.backgroundPosition = `center ${-y}px`;
-    });
-  </script>
 </body>
 </html>
