@@ -3,265 +3,348 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Amrutlal Kavaiya — Ghibli‑Style Portfolio</title>
+  <title>Amrutlal Kavaiya — AI Specialist</title>
 
-  <!-- Bootstrap (optional for grid/layout) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-
-  <!-- Ghibli‑style fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&family=Kosugi+Maru&display=swap" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Product+Sans:wght@400;700&display=swap" rel="stylesheet"/>
 
   <style>
+    /* Google-inspired CSS Variables */
     :root {
-      /* Ghibli palette */
-      --primary:       #8fae9f;
-      --primary-light: #b8d8c4;
-      --primary-dark:  #6f8f80;
-      --accent:        #f4e3b2;
-      --accent-soft:   rgba(244, 227, 178, 0.3);
-      --neutral-light: #faf6f0;
-      --neutral-dark:  #2c2a29;
-      --text-primary:  #2c2a29;
-      --text-secondary:#555146;
-      --shadow-soft:   0 6px 20px rgba(0, 0, 0, 0.04);
+      --google-blue: #4285F4;
+      --google-red: #EA4335;
+      --google-yellow: #FBBC05;
+      --google-green: #34A853;
+      --background: #ffffff;
+      --text-primary: #202124;
+      --text-secondary: #5f6368;
+      --border-color: #dadce0;
+      --hover-color: #f1f3f4;
+      --shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
     }
 
-    /* Base */
-    body {
+    /* Base Styles */
+    * {
       margin: 0;
-      font-family: 'Kosugi Maru', sans-serif;
-      background-color: var(--neutral-light);
-      background-image: url('/assets/textures/paper-fibers.png');
-      background-size: cover;
-      color: var(--text-primary);
-      line-height: 1.7;
-      padding-top: 76px;
-      overflow-x: hidden;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    h1, .section-title {
-      font-family: 'Sawarabi Mincho', serif;
-      letter-spacing: 0.02em;
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--background);
       color: var(--text-primary);
+      line-height: 1.5;
     }
 
-    /* Navbar */
-    .navbar {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      box-shadow: var(--shadow-soft);
-      transition: all 0.3s ease;
+    a {
+      text-decoration: none;
+      color: var(--google-blue);
     }
-    .navbar.scrolled {
-      background: var(--primary-dark);
+
+    img {
+      max-width: 100%;
     }
-    .navbar-brand, .nav-link {
-      color: white !important;
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
-    .nav-link {
-      margin-left: 1.5rem;
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      background-color: var(--background);
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Product Sans', sans-serif;
+      font-size: 22px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+    }
+
+    .logo span {
+      margin-right: 6px;
+      display: inline-block;
+    }
+
+    .logo span:nth-child(1) { color: var(--google-blue); }
+    .logo span:nth-child(2) { color: var(--google-red); }
+    .logo span:nth-child(3) { color: var(--google-yellow); }
+    .logo span:nth-child(4) { color: var(--google-green); }
+    .logo span:nth-child(5) { color: var(--google-blue); }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav li {
+      margin-left: 24px;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      font-size: 14px;
       font-weight: 500;
+      padding: 8px 0;
       position: relative;
     }
-    .nav-link::after {
+
+    nav a:hover {
+      color: var(--text-primary);
+    }
+
+    nav a::after {
       content: '';
       position: absolute;
-      bottom: 0; left: 0;
-      width: 0; height: 2px;
-      background: white;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--google-blue);
       transition: width 0.3s;
     }
-    .nav-link:hover::after { width: 100%; }
 
-    /* Hero */
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
     .hero {
-      position: relative;
       text-align: center;
-      padding: 9rem 0 7rem;
-      background: url('/assets/ghibli-sky.jpg') center/cover no-repeat fixed;
-      color: white;
+      padding: 100px 20px;
+      max-width: 800px;
+      margin: 0 auto;
     }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(circle at 30% 50%, var(--accent-soft), transparent 70%);
-    }
+
     .hero h1 {
-      font-size: 3rem; font-weight: 700; margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem; max-width: 700px; margin: auto 0 2rem; opacity: .9;
-    }
-    .btn-primary {
-      background: var(--accent);
+      font-family: 'Product Sans', sans-serif;
+      font-size: 54px;
+      margin-bottom: 20px;
       color: var(--text-primary);
-      border: none;
-      padding: .8rem 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 14px rgba(244,227,178,0.4);
-      transition: transform .3s, box-shadow .3s;
+      line-height: 1.2;
     }
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(244,227,178,0.5);
+
+    .hero p {
+      font-size: 18px;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+    }
+
+    .search-container {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .search-box {
+      width: 100%;
+      height: 46px;
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 0 20px;
+      font-size: 16px;
+      outline: none;
+      box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+      transition: box-shadow 0.3s;
+    }
+
+    .search-box:focus {
+      box-shadow: 0 1px 8px rgba(32,33,36,0.5);
+    }
+
+    .search-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      gap: 12px;
+    }
+
+    .btn {
+      background-color: var(--hover-color);
+      border: none;
+      color: var(--text-primary);
+      padding: 12px 16px;
+      font-size: 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+      background-color: #e8eaed;
     }
 
     /* Sections */
-    .section { padding: 6rem 0; }
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
     .section-title {
-      font-size: 2.2rem;
-      margin-bottom: 2rem;
-      position: relative;
-    }
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 60px; height: 3px;
-      background: linear-gradient(to right, var(--primary), var(--accent));
-      margin: .8rem auto 0;
-      border-radius: 2px;
-    }
-    .about-content {
-      max-width: 800px;
-      margin: auto;
-      font-size: 1.1rem;
-      color: var(--text-secondary);
+      font-family: 'Product Sans', sans-serif;
+      font-size: 28px;
+      color: var(--text-primary);
+      margin-bottom: 30px;
       text-align: center;
     }
 
-    /* Cards */
-    .skill-card, .project-card {
-      background: rgba(255,255,255,0.8);
-      backdrop-filter: blur(2px);
-      border: 1px solid rgba(0,0,0,0.05);
-      box-shadow: var(--shadow-soft);
-      border-radius: 16px;
-      transition: transform .3s, box-shadow .3s;
-      overflow: hidden;
-      position: relative;
-      padding: 2rem 1.5rem;
-    }
-    .skill-card:hover, .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-    .skill-icon {
-      width: 70px; height: 70px;
-      margin-bottom: 1rem;
-    }
-    .skill-card h5, .project-title {
-      font-weight: 600; margin-bottom: .8rem;
-      color: var(--text-primary);
-    }
-    .skill-card p, .project-text {
+    /* About Section */
+    .about-content {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
       color: var(--text-secondary);
-      font-size: .95rem;
+      font-size: 16px;
       line-height: 1.6;
     }
 
-    /* Contact */
-    .contact-section {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      padding: 5rem 0;
-      position: relative;
+    /* Cards Section */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
     }
-    .contact-section::before {
-      content: '';
-      position: absolute;
-      top: -50px; right: -50px;
-      width: 300px; height: 300px;
-      background: radial-gradient(circle at center, var(--accent-soft), transparent 70%);
-      border-radius: 50%;
-    }
-    .btn-outline-light {
-      border: 2px solid white;
-      color: white;
-      padding: .8rem 2rem;
+
+    .card {
+      background-color: var(--background);
+      border: 1px solid var(--border-color);
       border-radius: 8px;
-      transition: transform .3s, box-shadow .3s;
+      padding: 24px;
+      transition: box-shadow 0.3s;
     }
-    .btn-outline-light:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(255,255,255,0.2);
+
+    .card:hover {
+      box-shadow: var(--shadow);
+    }
+
+    .card-title {
+      font-family: 'Product Sans', sans-serif;
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .card-text {
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .contact-btn {
+      background-color: var(--google-blue);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .contact-btn:hover {
+      background-color: #3367d6;
+      box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
     }
 
     /* Footer */
     footer {
-      background: var(--neutral-dark);
-      color: white;
-      padding: 3rem 0 2rem;
-    }
-    .social-icons a {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 42px; height: 42px; margin: 0 .5rem;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50%;
-      transition: transform .3s, background .3s;
-    }
-    .social-icons a:hover {
-      background: var(--accent);
-      transform: translateY(-3px);
-    }
-    .copyright {
-      opacity: .7; font-size: .9rem;
+      padding: 20px 0;
+      text-align: center;
+      background-color: #f8f9fa;
+      color: var(--text-secondary);
+      font-size: 14px;
     }
 
-    /* Floating petals */
-    @keyframes float {
-      from { transform: translateY(0) rotate(0deg); }
-      to   { transform: translateY(-30px) rotate(360deg); }
-    }
-    .petal {
-      position: absolute;
-      width: 30px; height: 30px;
-      background: url('/assets/flower-petal.svg') no-repeat center/contain;
-      animation: float 6s ease-in-out infinite alternate;
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 16px;
     }
 
-    /* Responsive tweaks */
+    .social-icon {
+      width: 24px;
+      height: 24px;
+      opacity: 0.6;
+      transition: opacity 0.3s;
+    }
+
+    .social-icon:hover {
+      opacity: 1;
+    }
+
+    /* Media Queries */
     @media (max-width: 768px) {
-      .hero { padding: 6rem 0 4rem; }
-      .hero h1 { font-size: 2rem; }
-      .section { padding: 4rem 0; }
-      .section-title { font-size: 1.8rem; margin-bottom: 2rem; }
-      .nav-link { margin: .5rem 0; }
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
     }
   </style>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Conversation AI Specialist</a>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse justify-content-end" id="nav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero with petals -->
-  <header class="hero">
-    <div class="container">
-      <h1>Chatbot Developer &amp; AI Specialist</h1>
-      <p>Delivering intelligent, innovative solutions to enhance customer experiences with AI-powered chatbots and virtual assistants.</p>
-      <a href="#contact" class="btn btn-primary">Get In Touch</a>
-    </div>
-    <!-- floating petals -->
-    <div class="petal" style="top:80%; left:20%; animation-delay:1s;"></div>
-    <div class="petal" style="top:70%; left:50%; animation-delay:3s;"></div>
-    <div class="petal" style="top:85%; left:75%; animation-delay:2s;"></div>
-    <div class="petal" style="top:60%; left:30%; animation-delay:4s;"></div>
+  <!-- Header -->
+  <header>
+    <a href="#" class="logo">
+      <span>A</span><span>m</span><span>r</span><span>u</span><span>t</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- About -->
-  <section id="about" class="section">
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Chatbot Developer & AI Specialist</h1>
+    <p>Delivering intelligent, innovative solutions to enhance customer experiences with AI-powered chatbots and virtual assistants.</p>
+    <div class="search-container">
+      <input type="text" class="search-box" placeholder="Search my portfolio or ask about my services...">
+      <div class="search-buttons">
+        <button class="btn">Portfolio Search</button>
+        <button class="btn">I'm Feeling Lucky</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
     <div class="container">
       <h2 class="section-title">About Me</h2>
       <div class="about-content">
@@ -270,95 +353,76 @@
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="section bg-light">
+  <!-- Skills Section -->
+  <section id="skills">
     <div class="container">
       <h2 class="section-title">Skills</h2>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="skill-card text-center">
-            <img src="/assets/icons/chat-bubble-handdrawn.svg" alt="Conversational AI" class="skill-icon"/>
-            <h5>Conversational AI</h5>
-            <p>Building chatbot solutions using Dialogflow, Rasa, and Microsoft Bot Framework. Seamless multi-platform integration.</p>
-          </div>
+      <div class="cards">
+        <div class="card">
+          <h3 class="card-title">Conversational AI</h3>
+          <p class="card-text">Building chatbot solutions using Dialogflow, Rasa, and Microsoft Bot Framework. Seamless multi-platform integration.</p>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="skill-card text-center">
-            <img src="/assets/icons/brain-handdrawn.svg" alt="Machine Learning" class="skill-icon"/>
-            <h5>Machine Learning &amp; NLP</h5>
-            <p>Developing models for intent classification, entity recognition, sentiment analysis with TensorFlow, scikit-learn, PyTorch.</p>
-          </div>
+        <div class="card">
+          <h3 class="card-title">Machine Learning & NLP</h3>
+          <p class="card-text">Developing models for intent classification, entity recognition, sentiment analysis with TensorFlow, scikit-learn, PyTorch.</p>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="skill-card text-center">
-            <img src="/assets/icons/cloud-handdrawn.svg" alt="Cloud Technologies" class="skill-icon"/>
-            <h5>Cloud Technologies</h5>
-            <p>Deploying AI on GCP, AWS, Azure. Using Cloud Functions, Cloud Run, BigQuery for scalable solutions.</p>
-          </div>
+        <div class="card">
+          <h3 class="card-title">Cloud Technologies</h3>
+          <p class="card-text">Deploying AI on GCP, AWS, Azure. Using Cloud Functions, Cloud Run, BigQuery for scalable solutions.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="section">
+  <!-- Projects Section -->
+  <section id="projects">
     <div class="container">
       <h2 class="section-title">Freelancer Projects</h2>
-      <div class="row">
-        <!-- Repeat project-card blocks as needed -->
-        <div class="col-md-4 mb-4">
-          <div class="project-card">
-            <h5 class="project-title">MediRAG - Intelligent Healthcare Solutions</h5>
-            <p class="project-text">Healthcare chatbot using RAG architecture on Google Cloud to enhance patient care.</p>
-          </div>
+      <div class="cards">
+        <div class="card">
+          <h3 class="card-title">MediRAG - Intelligent Healthcare Solutions</h3>
+          <p class="card-text">Healthcare chatbot using RAG architecture on Google Cloud to enhance patient care.</p>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="project-card">
-            <h5 class="project-title">Legal Assist Chatbot</h5>
-            <p class="project-text">Multilingual AI chatbot for legal info & document summaries in Indian languages.</p>
-          </div>
+        <div class="card">
+          <h3 class="card-title">Legal Assist Chatbot</h3>
+          <p class="card-text">Multilingual AI chatbot for legal info & document summaries in Indian languages.</p>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="project-card">
-            <h5 class="project-title">Medical Office Receptionist</h5>
-            <p class="project-text">Digital receptionist with appointment scheduling, calendar & SMS reminders via Dialogflow CX.</p>
-          </div>
+        <div class="card">
+          <h3 class="card-title">Medical Office Receptionist</h3>
+          <p class="card-text">Digital receptionist with appointment scheduling, calendar & SMS reminders via Dialogflow CX.</p>
         </div>
-        <!-- add other projects here... -->
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact-section text-center">
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
     <div class="container">
       <h2 class="section-title">Contact Me</h2>
       <p>If you have any questions or would like to discuss a project, feel free to get in touch!</p>
-      <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Me</a>
+      <a href="contact.html" class="contact-btn">Contact Me</a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center">
+  <footer>
     <div class="container">
       <div class="social-icons">
-        <a href="#"><img src="/assets/icons/linkedin.svg" alt="LinkedIn"/></a>
-        <a href="#"><img src="/assets/icons/github.svg" alt="GitHub"/></a>
-        <a href="#"><img src="/assets/icons/twitter.svg" alt="Twitter"/></a>
+        <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linkedin.svg" alt="LinkedIn" class="social-icon"></a>
+        <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" alt="GitHub" class="social-icon"></a>
+        <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/twitter.svg" alt="Twitter" class="social-icon"></a>
       </div>
-      <p class="copyright">&copy; 2024 Conversation AI Specialist. All Rights Reserved.</p>
+      <p>&copy; 2025 Amrutlal Kavaiya. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script -->
   <script>
-    // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-      document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
-      // Parallax for hero
-      const y = window.scrollY / 2;
-      document.querySelector('.hero').style.backgroundPosition = `center ${-y}px`;
+    // Search functionality
+    document.querySelector('.search-box').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        alert('Search functionality would go here in a real implementation!');
+      }
     });
   </script>
 </body>
